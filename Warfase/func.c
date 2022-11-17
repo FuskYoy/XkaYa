@@ -59,6 +59,12 @@ void summ_hit(int array[], int array_hit[], int array_makima[], const int v){
     }
 }
 
-// -у нас был тройничок
-// -ого, мжм или жмж?
-// посмотри на столбцы сверху
+void no_null(int array[], int array_hit[], const int v){
+    int q=0;
+    for(int poo=0;poo<v;++poo){
+        if (array[poo] != 0){
+          array_hit[q]=array[poo];
+            ++q;
+        }
+    }
+}
