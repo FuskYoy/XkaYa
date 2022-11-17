@@ -3,9 +3,9 @@
 #include "func.h"
 
 
-void fill_mass(char array[], const int v){
-for (int i=0;i<v;++i){
-    scanf ("%c", &array[i]);   
+void fill_mass(int array[], const int v){
+for (int i=0;i<v;++i){ 
+   array[i]=0+rand()%(v-0+1);   
 }
 }
 
@@ -22,9 +22,9 @@ for (int j=0;j<v;++j){
     }
 }
 
-void print_mass(char array[], const int v){ 
+void print_mass(int array[], const int v){ 
 for (int k=0;k<v;++k){
-printf ("%c\n", array[k]);
+printf ("%d ", array[k]);
 }
 }
 
@@ -32,12 +32,13 @@ void miniboss(char array[], const int v){
     int cd = 0;
     for(int y=0; y<v;++y){
         for(int n=0;n<v;++n){
-            if (array[y]<array[n]) 
+            if (array[y]<array[n]){ 
                 cd = cd+1;}
             if (cd == v-1){
             printf("%c, %d\n",array[y], array[y]);}
     cd=0;
     }
+}
 }
 void manaboss(char array[], const int v){
 int cd = 0;
@@ -52,4 +53,12 @@ int cd = 0;
     cd=0;
 }
 }
-//Почему то через ?: не работает, говорит что в этом выражении будет всегда "Правда"
+void summ_hit(int array[], int array_hit[], int array_makima[], const int v){
+    for(int n=0;n<v;++n){
+        array_makima[n]=array_hit[n]+array[n];
+    }
+}
+
+// -у нас был тройничок
+// -ого, мжм или жмж?
+// посмотри на столбцы сверху
